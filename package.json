@@ -2,12 +2,19 @@
     "name": "mrohaung-root",
     "version": "1.0.0",
     "private": true,
+    "workspaces": [
+        "backend",
+        "web"
+    ],
     "scripts": {
-        "start": "node backend/index.js",
-        "build": "echo 'No build script for root'",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "dev": "npm run dev --workspace=web",
+        "build": "npm run build --workspace=web",
+        "start": "npm run start --workspace=web"
     },
-    "dependencies": {},
+    "dependencies": {
+        "next": "latest",
+        "express": "latest"
+    },
     "engines": {
         "node": ">=18.0.0"
     }

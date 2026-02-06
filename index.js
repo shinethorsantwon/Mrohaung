@@ -1,1 +1,1 @@
-console.log('Root loaded');
+require('./backend/index.js');
