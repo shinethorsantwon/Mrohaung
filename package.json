@@ -2,10 +2,14 @@
     "name": "mrohaung-root",
     "version": "1.0.0",
     "private": true,
+    "workspaces": [
+        "backend",
+        "web"
+    ],
     "scripts": {
-        "build": "cd web && npm install && npm run build && cd ../backend && npm install && npx prisma generate",
-        "start": "node index.js",
-        "dev": "npm run dev --workspace=web"
+        "build": "cd web && npm install && npm run build && cd .. && rm -rf .next && cp -r web/.next .",
+        "start": "cd web && npm start",
+        "dev": "cd web && npm run dev"
     },
     "dependencies": {
         "next": "16.1.6",
